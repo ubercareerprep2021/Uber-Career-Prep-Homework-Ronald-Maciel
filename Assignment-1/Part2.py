@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # check if s1 is permutation of s2 
 # examples:
 #    isStringPermutation(s1: “asdf”, s2: “fsda”) == true
@@ -19,6 +20,17 @@ def isStringPermutation(s1: str, s2: str) -> bool:
             return False
 
 
+def pairsThatEqualSum(inputArray: list, targetSum: int) -> list:
+    list_pairs = []
+
+    for n in range(0, len(inputArray)):
+        for m in range(n+1, len(inputArray)):
+            if inputArray[n] + inputArray[m] == targetSum:
+                list_pairs.append((inputArray[n], inputArray[m]))
+
+    return list_pairs
+
+
 if __name__ == '__main__':
     str1 = "test"
     str2 = "ttse"
@@ -26,3 +38,11 @@ if __name__ == '__main__':
         print("Yes")
     else:
         print("No")
+    
+
+    inputArray = [1, 2, 3, 4, 5]
+    list_pairs = pairsThatEqualSum(inputArray, 7)
+    print(list_pairs)
+    
+
+
