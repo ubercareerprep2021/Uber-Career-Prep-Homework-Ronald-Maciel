@@ -54,3 +54,41 @@ class Queue:
     # returns whether or not the queue is empty
     def isEmpty(self):
         return self.queue == []
+
+
+def testingStack:
+    stack = Stack()
+    print("Stack empty: \n")
+    print("size: ", stack.size())
+    print("empty: ", stack.isEmpty())
+    print("top: ", stack.top())
+    
+    print("\nPushed value: \n")
+    stack.push(100)
+    print("size: ", stack.size())
+    print("empty: ", stack.isEmpty())
+    print("top: ", stack.top())
+    print("pop: ", stack.pop())
+
+def testingQueue:
+    queue = Queue()
+
+    print("Queue empty: \n")
+    print("size: ", queue.size())
+    print("empty: ", queue.isEmpty())
+    print("rear: ", queue.rear())
+
+    print("\nPushed value: 10\n")
+    queue.enqueue(10)
+    print("size: ", queue.size())
+    print("empty: ", queue.isEmpty())
+    print("rear: ", queue.rear())
+    print("dequeue: ", queue.dequeue())
+    
+    print("\nPushed value: 100\n")
+    queue.enqueue(100)
+    print("size: ", queue.size())
+    print("empty: ", queue.isEmpty())
+    print("rear: ", queue.rear())
+    print("dequeue: ", queue.dequeue())
+    
