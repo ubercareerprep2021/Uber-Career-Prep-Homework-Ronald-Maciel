@@ -56,7 +56,7 @@ class Queue:
         return self.queue == []
 
 
-def testingStack:
+def testingStack():
     stack = Stack()
     print("Stack empty: \n")
     print("size: ", stack.size())
@@ -70,7 +70,7 @@ def testingStack:
     print("top: ", stack.top())
     print("pop: ", stack.pop())
 
-def testingQueue:
+def testingQueue():
     queue = Queue()
 
     print("Queue empty: \n")
@@ -92,3 +92,8 @@ def testingQueue:
     print("rear: ", queue.rear())
     print("dequeue: ", queue.dequeue())
     
+
+
+if __name__ == '__main__':
+    testingStack()
+    testingQueue()
