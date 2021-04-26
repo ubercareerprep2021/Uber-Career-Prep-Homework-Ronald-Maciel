@@ -10,13 +10,16 @@ class Stack:
     # Removes what is on the top of the stack, and returns that value to the caller
     def pop(self):
         if len(self.stack) == 0:
-            return None
+            return 0
         else:
             self.stack.pop()
 
     # Looks at the top value, and returns it. Does not manipulate the stack
     def top(self):
-        return self.stack[-1]
+        if len(self.stack) == 0:
+            return None
+        else:
+            return self.stack[-1]
 
     # Returns True or False if the stack is Empty or not, respectively
     def isEmpty(self):
@@ -37,15 +40,24 @@ class Queue:
 
     # removes an item from the queue
     def dequeue(self):
-        self.queue = self.queue[1:]
+        if len(self.queue) == 0:
+            return None
+        else:
+            self.queue = self.queue[1:]
 
     # returns the item at the end of the queue
     def rear(self):
-        return self.queue[-1]
+        if len(self.queue) == 0:
+            return None
+        else:
+            return self.queue[-1]
 
     # returns the item at the front of the queue
     def front(self):
-        return self.queue[0]
+        if len(self.queue) == 0:
+            return None
+        else:
+            return self.queue[0]
 
     # returns the size of the queue
     def size(self):
@@ -58,39 +70,41 @@ class Queue:
 
 def testingStack():
     stack = Stack()
-    print("Stack empty: \n")
-    print("size: ", stack.size())
-    print("empty: ", stack.isEmpty())
-    print("top: ", stack.top())
+    print("----------- Testing Stack -----------\nStack empty:")
+    print("size:", stack.size())
+    print("empty:", stack.isEmpty())
+    print("top:", stack.top())
     
-    print("\nPushed value: \n")
-    stack.push(100)
-    print("size: ", stack.size())
-    print("empty: ", stack.isEmpty())
-    print("top: ", stack.top())
-    print("pop: ", stack.pop())
+    element = 100
+    print("\nPushed value:", element)
+    stack.push(element)
+    print("size:", stack.size())
+    print("empty:", stack.isEmpty())
+    print("top:", stack.top())
+    print("pop:", stack.pop())
 
 def testingQueue():
     queue = Queue()
 
-    print("Queue empty: \n")
-    print("size: ", queue.size())
-    print("empty: ", queue.isEmpty())
-    print("rear: ", queue.rear())
+    print("\n\n----------- Testing Queue -----------\nQueue empty:")
+    print("size:", queue.size())
+    print("empty:", queue.isEmpty())
+    print("rear:", queue.rear())
 
-    print("\nPushed value: 10\n")
-    queue.enqueue(10)
-    print("size: ", queue.size())
-    print("empty: ", queue.isEmpty())
-    print("rear: ", queue.rear())
-    print("dequeue: ", queue.dequeue())
+    element = 100
+    print("\nPushed value:", element)
+    queue.enqueue(element)
+    print("size:", queue.size())
+    print("empty:", queue.isEmpty())
+    print("rear:", queue.rear())
+    print("dequeue:", queue.dequeue())
     
-    print("\nPushed value: 100\n")
+    print("\nPushed value: 100")
     queue.enqueue(100)
-    print("size: ", queue.size())
-    print("empty: ", queue.isEmpty())
-    print("rear: ", queue.rear())
-    print("dequeue: ", queue.dequeue())
+    print("size:", queue.size())
+    print("empty:", queue.isEmpty())
+    print("rear:", queue.rear())
+    print("dequeue:", queue.dequeue())
     
 
 
