@@ -21,6 +21,7 @@ def reverseLinkedList_Stack(linkedList: LinkedList):
     while (current.next != None):
         stack.append(current)
         current = current.next
+
     linkedList.head = current
     while (len(stack) != 0):
         current.next = stack.pop()
@@ -31,6 +32,16 @@ def reverseLinkedList_Stack(linkedList: LinkedList):
 
 
 def reverseLinkedList_Recursively(linkedList: LinkedList):
-    print("a")
+    current = linkedList.head
+    new_list = LinkedList()
+    aux = LinkedList()
 
-
+    if (current == None): 
+        return
+    elif (current.next == None):
+        new_list.push(current.element)
+        return new_list
+    aux.head = current.next
+    new_list = reverseLinkedList_Recursively(aux.head)
+    new_list.push(current.element)
+    return new_list
