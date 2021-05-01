@@ -15,7 +15,18 @@ def reverseLinkedList_Iteratively(linkedList: LinkedList):
 
 
 def reverseLinkedList_Stack(linkedList: LinkedList):
-    print("a")
+    stack = []
+    current = linkedList.head
+
+    while (current.next != None):
+        stack.append(current)
+        current = current.next
+    linkedList.head = current
+    while (len(stack) != 0):
+        current.next = stack.pop()
+        current = current.next
+    current.next = None
+    return linkedList
 
 
 
