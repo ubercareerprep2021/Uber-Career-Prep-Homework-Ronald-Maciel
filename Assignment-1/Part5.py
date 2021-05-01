@@ -12,8 +12,6 @@ def reverseLinkedList_Iteratively(linkedList: LinkedList):
     linkedList.head = prev_node
     return linkedList
 
-
-
 def reverseLinkedList_Stack(linkedList: LinkedList):
     stack = []
     current = linkedList.head
@@ -31,17 +29,26 @@ def reverseLinkedList_Stack(linkedList: LinkedList):
 
 
 
-def reverseLinkedList_Recursively(linkedList: LinkedList):
-    current = linkedList.head
-    new_list = LinkedList()
-    aux = LinkedList()
+def reverseLinkedList_Recursively(head: LinkedList):
+    if head is None or head.next is None:
+        return head
 
-    if (current == None): 
-        return
-    elif (current.next == None):
-        new_list.push(current.element)
-        return new_list
-    aux.head = current.next
-    new_list = reverseLinkedList_Recursively(aux.head)
-    new_list.push(current.element)
-    return new_list
+    rest = reverseLinkedList_Recursively(head.next)
+ 
+    head.next.next = head
+    head.next = None
+ 
+    return rest
+
+
+linkedList = LinkedList()
+linkedList.push(Node(20))
+linkedList.push(Node(4))
+linkedList.push(Node(15))
+linkedList.push(Node(85))
+ 
+print("Given linked list: ", linkedList.printList())
+ 
+linkedList.head = reverseLinkedList_Recursively(linkedList.head)
+ 
+print("Reversed linked list: ", linkedList.printList())
