@@ -13,7 +13,7 @@ class LinkedList:
         if self.head == None:
             self.head = node
         else:
-            while self.next != None:
+            while node.next != None:
                 self.head = self.next
             self.next = node
 
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     print("list size: ", linkedList.list_size())
 
     print("insert at position 0:")
-    linkedList.insert(0, 5)
+    linkedList.insert(0, Node(5))
     print("list: ", linkedList.printList())
 
 
