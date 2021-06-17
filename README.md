@@ -10,7 +10,7 @@ Uber Career Prep Homework
 
 ## Assignment-2
 ### Trees
-  * Ex1 - 👨🏽‍💻⏳
+  * Ex1 - ✅
   * Ex2 - 👨🏽‍💻⏳
   * Ex3 - 👨🏽‍💻⏳
   * Ex4 - 👨🏽‍💻⏳
