@@ -9,7 +9,7 @@ Uber Career Prep Homework
   * Part5 - ✅
 
 ## Assignment-2
-### Tress
+### Trees
   * Ex1 - 👨🏽‍💻⏳
   * Ex2 - 👨🏽‍💻⏳
   * Ex3 - 👨🏽‍💻⏳
