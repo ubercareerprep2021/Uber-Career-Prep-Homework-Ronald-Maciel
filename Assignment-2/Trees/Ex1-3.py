@@ -36,6 +36,23 @@ class Employee:
                             next_level.append(direct_report)
                 queue = next_level
 
+    def printNumLevels(self):
+        queue = [self]
+        level_counter = 0
+
+        if queue is None:
+            return
+        else:
+            while len(queue) > 0:
+                next_level = []
+                for employee in queue:
+                    if len(employee.direct_reports) > 0:
+                        for direct_report in employee.direct_reports:
+                            next_level.append(direct_report)
+                level_counter += 1
+                queue = next_level
+            print(level_counter)
+
 
 class OrganizationStructure:
     def __init__(self, ceo):
@@ -67,6 +84,12 @@ if __name__ == "__main__":
     # Ex.2
     print("\nEx.2\n----")
     A.printLevelByLevel()
+
+    # Ex.3
+    print("\nEx.3\n----")
+    A.printNumLevels()
+
+
     
     
 
