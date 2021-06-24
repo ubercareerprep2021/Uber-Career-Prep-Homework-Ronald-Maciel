@@ -22,7 +22,20 @@ class BinarySearchTree:
 
     
     def find(self, key):
-        print(key)
+        if key is None:
+            return False
+        if key == self.key:
+            return True
+        elif key > self.key:
+            if self.right is None:
+                return False
+            else: 
+                return self.right.find(key)
+        else: 
+            if self.left is None:
+                return False
+            else:
+                return self.left.find(key)
 
     class Node:
         def __init__(self, key, left = None, right = None):
@@ -32,7 +45,6 @@ class BinarySearchTree:
 
 
 if __name__ == "__main__":
-    print("a")
     # root_node = BinarySearchTree.Node(16)
     tree = BinarySearchTree(16)
     tree.insert(10)
@@ -42,4 +54,6 @@ if __name__ == "__main__":
     tree.insert(18)
     tree.insert(29)
     tree.insert(99)
+
+    print(tree.find(99)) # if it was found, it was inserted
     
