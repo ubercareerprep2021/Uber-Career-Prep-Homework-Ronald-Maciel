@@ -1,3 +1,4 @@
+# List
 class ListPhoneBook:
     def __init__(self):
         self.list = list()
@@ -14,11 +15,47 @@ class ListPhoneBook:
                 return contact.get("phoneNumber")
         return -1
 
-# class BinarySearchTreePhoneBook:
+
+# Tree
+class BinarySearchTreePhoneBook:
+    def __init__(self, name, phoneNumber):
+        self.name = name
+        self.phoneNumber = phoneNumber
+        self.left = None
+        self.right = None
+
+    def size(self) -> int:
+        counter = 1
+        if self.left is not None:
+            counter += self.left.size()
+        if self.right is not None:
+            counter += self.right.size()
+
+        return counter
+
+    def insert(self, name, phoneNumber):
+        pass
+
+    def find(self, name) -> int:
+        if self.name == name:
+            return self.phoneNumber
+        elif self.name > name:
+            if self.right is not None:
+                self.right.find(name)
+            else:
+                return -1
+        else:
+            if self.left is not None:
+                self.left.find(name)
+            else:
+                return -1
+
+
 
 if __name__ == "__main__":
-    list_phoneBook = ListPhoneBook()
+    print("------- LIST PHONE BOOK -------")
 
+    list_phoneBook = ListPhoneBook()
     print(list_phoneBook.size())
 
     list_phoneBook.insert("ABC", 1111111111)
@@ -30,3 +67,8 @@ if __name__ == "__main__":
     print(list_phoneBook.find("ABC"))
     print(list_phoneBook.find("XYZ"))
     print(list_phoneBook.find("DEF"))
+
+    print("\n------- TREE PHONE BOOK -------")
+    tree_phoneBook = BinarySearchTreePhoneBook("ABC", 1111111111)
+    print(tree_phoneBook.size())
+    print(tree_phoneBook.find("ABC"))
