@@ -34,12 +34,25 @@ class BinarySearchTreePhoneBook:
         return counter
 
     def insert(self, name, phoneNumber):
-        pass
+        if self.name is None:
+            print("oops...")
+        else:
+            contact = BinarySearchTreePhoneBook(name, phoneNumber)
+            if self.name > contact.name:
+                if self.left is None:
+                    self.left = contact
+                else:
+                    self.left.insert(name, phoneNumber)
+            else:
+                if self.right is None:
+                    self.right = contact
+                else:
+                    self.right.insert(name, phoneNumber)
 
     def find(self, name) -> int:
         if self.name == name:
             return self.phoneNumber
-        elif self.name > name:
+        elif name > self.name:
             if self.right is not None:
                 self.right.find(name)
             else:
@@ -71,4 +84,11 @@ if __name__ == "__main__":
     print("\n------- TREE PHONE BOOK -------")
     tree_phoneBook = BinarySearchTreePhoneBook("ABC", 1111111111)
     print(tree_phoneBook.size())
+
+    tree_phoneBook.insert("XYZ", 9999999999)
+    tree_phoneBook.insert("DEF", 2222222222)
+    print(tree_phoneBook.size())
+
     print(tree_phoneBook.find("ABC"))
+    print(tree_phoneBook.find("XYZ"))
+    print(tree_phoneBook.find("DEF"))
