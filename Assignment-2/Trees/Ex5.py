@@ -17,16 +17,16 @@ class ListPhoneBook:
 # class BinarySearchTreePhoneBook:
 
 if __name__ == "__main__":
-    list = ListPhoneBook()
-    list_size = list.size()
-    print(list_size)
+    list_phoneBook = ListPhoneBook()
 
-    list.insert("ABC", 1111111111)
-    list.insert("XYZ", 9999999999)
-    list.insert("DEF", 2222222222)
+    print(list_phoneBook.size())
 
-    list_size = list.size()
-    print(list_size)
+    list_phoneBook.insert("ABC", 1111111111)
+    list_phoneBook.insert("XYZ", 9999999999)
+    list_phoneBook.insert("DEF", 2222222222)
 
-    phone = list.find("ABC")
-    print(phone)
+    print(list_phoneBook.size())
+
+    print(list_phoneBook.find("ABC"))
+    print(list_phoneBook.find("XYZ"))
+    print(list_phoneBook.find("DEF"))
