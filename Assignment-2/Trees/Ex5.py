@@ -6,29 +6,27 @@ class ListPhoneBook:
         return len(self.list)
 
     def insert(self, name, phoneNumber):
-        self.list.append({"name": name, "phone_number": phoneNumber})
+        self.list.append({"name": name, "phoneNumber": phoneNumber})
 
     def find(self, name) -> int:
         for contact in self.list:
-            # print(name)
-            # print(contact.get("number"))
             if name == contact.get("name"):
-                return contact.get("number")
+                return contact.get("phoneNumber")
         return -1
 
 # class BinarySearchTreePhoneBook:
 
 if __name__ == "__main__":
-    list_phoneBook = ListPhoneBook()
-    list_size = list_phoneBook.size()
+    list = ListPhoneBook()
+    list_size = list.size()
     print(list_size)
 
-    list_phoneBook.insert("ABC", 1111111111)
-    list_phoneBook.insert("XYZ", 9999999999)
-    list_phoneBook.insert("DEF", 2222222222)
+    list.insert("ABC", 1111111111)
+    list.insert("XYZ", 9999999999)
+    list.insert("DEF", 2222222222)
 
-    list_size = list_phoneBook.size()
+    list_size = list.size()
     print(list_size)
 
-    phone = list_phoneBook.find("ABC")
+    phone = list.find("ABC")
     print(phone)
