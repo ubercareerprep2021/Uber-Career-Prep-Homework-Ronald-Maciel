@@ -54,7 +54,8 @@ class GraphWithAdjacencyList:
                     visited.add(node_adj)
                     queue.append(node_adj)
 
-    
+    def minNumberOfEdges(self, node1: GraphNode, node2: GraphNode):
+        pass
 
 if __name__ == "__main__":
     graph = GraphWithAdjacencyList()
