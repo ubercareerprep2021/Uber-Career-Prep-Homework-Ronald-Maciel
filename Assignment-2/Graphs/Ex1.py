@@ -20,6 +20,8 @@ class GraphWithAdjacencyList:
         self.adjNodes[node1].remove(node2)
         self.adjNodes[node2].remove(node1)
 
+    def getAdjNodes(self, key: GraphNode):
+        return self.adjNodes[key]
 
 if __name__ == "__main__":
     graph = GraphWithAdjacencyList()
@@ -42,3 +44,5 @@ if __name__ == "__main__":
     graph.addEdge(GraphNode(2), GraphNode(0))
     graph.addEdge(GraphNode(6), GraphNode(4))
     graph.addEdge(GraphNode(6), GraphNode(0))
+
+    print(graph.getAdjNodes(GraphNode(7)))
