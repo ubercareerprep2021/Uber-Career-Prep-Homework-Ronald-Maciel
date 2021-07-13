@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class GraphNode:
     def __init__(self, data):
         self.data = data
@@ -23,6 +26,7 @@ class GraphWithAdjacencyList:
     def getAdjNodes(self, key: GraphNode):
         return self.adjNodes[key]
 
+    # Ex2
     def dfs(self, key):
         visited = set()
         self.dfs_helper(key, visited)
@@ -34,6 +38,23 @@ class GraphWithAdjacencyList:
         for node in self.adjNodes(key):
             if node not in visited:
                 self.dfs_helper(node, visited)
+
+    # Ex3
+    def bfs(self, key):
+        queue = deque()
+        visited = set()
+        queue.append(visited)
+
+        while queue:
+            node = self.adjNodes.pop(0)
+            print(s, end=" ")
+
+            for node_adj in self.adjNodes[node]:
+                if node_adj not in visited:
+                    visited.add(node_adj)
+                    queue.append(node_adj)
+
+    
 
 if __name__ == "__main__":
     graph = GraphWithAdjacencyList()
