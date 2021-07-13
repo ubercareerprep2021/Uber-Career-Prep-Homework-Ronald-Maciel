@@ -23,6 +23,18 @@ class GraphWithAdjacencyList:
     def getAdjNodes(self, key: GraphNode):
         return self.adjNodes[key]
 
+    def dfs(self, key):
+        visited = set()
+        self.dfs_helper(key, visited)
+
+    def dfs_helper(self, key, visited):
+        visited.add(key)
+        print(key, end=" ")
+
+        for node in self.adjNodes(key):
+            if node not in visited:
+                self.dfs_helper(node, visited)
+
 if __name__ == "__main__":
     graph = GraphWithAdjacencyList()
 
