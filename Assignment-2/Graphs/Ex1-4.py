@@ -55,7 +55,22 @@ class GraphWithAdjacencyList:
                     queue.append(node_adj)
 
     def minNumberOfEdges(self, node1: GraphNode, node2: GraphNode):
-        pass
+        queue = deque()
+        visited = set(node1)
+        queue.append(visited)
+
+        while queue:
+            numberEdges = queue.pop(0)
+            node = queue.pop(0)
+            if node in visited:
+                return numberEdges
+
+            for node_adj in self.adjNodes[node]:
+                if node_adj not in visited:
+                    visited.add(node_adj)
+                    queue.append(node_adj)
+
+            
 
 if __name__ == "__main__":
     graph = GraphWithAdjacencyList()
@@ -72,11 +87,11 @@ if __name__ == "__main__":
     graph.addNode(GraphNode(6))
     graph.addNode(GraphNode(0))
     
-    graph.addEdge(GraphNode(7), GraphNode(2))
-    graph.addEdge(GraphNode(7), GraphNode(4))
-    graph.addEdge(GraphNode(2), GraphNode(4))
-    graph.addEdge(GraphNode(2), GraphNode(0))
-    graph.addEdge(GraphNode(6), GraphNode(4))
-    graph.addEdge(GraphNode(6), GraphNode(0))
+    # graph.addEdge(GraphNode(7), GraphNode(2))
+    # graph.addEdge(GraphNode(7), GraphNode(4))
+    # graph.addEdge(GraphNode(2), GraphNode(4))
+    # graph.addEdge(GraphNode(2), GraphNode(0))
+    # graph.addEdge(GraphNode(6), GraphNode(4))
+    # graph.addEdge(GraphNode(6), GraphNode(0))
 
-    print(graph.getAdjNodes(GraphNode(7)))
+    # print(graph.getAdjNodes(GraphNode(7)))
